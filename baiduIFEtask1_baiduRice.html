@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>sprite</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+	}
+	input {
+		display: none;
+	}
+
+	.background {
+		margin-bottom: 20px;
+	}
+	
+	.checkbox_click + label, .radio_click + label {
+		display: inline-block;
+		background: url('sprite.png') no-repeat;
+	}
+
+	.checkbox_click + label {
+		background-position: -25px -33px;
+		width: 14px;
+		height: 14px;
+		line-height: 14px;
+	}
+	.checkbox_click:checked + label{
+		background-position: -60px -32px;
+	}
+	.radio_click + label{
+		background-position: -24px -10px;
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		
+	}
+	.radio_click:checked + label{
+		background-position: -59px -10px;
+	}
+
+	.checkbox_click_pseudoWay + label, .radio_click_pseudoWay + label {
+		display: inline-block;
+		border:1px solid #BBB;
+	}
+
+	.checkbox_click_pseudoWay + label {
+		width: 12px;
+		height: 12px;
+		line-height: 14px;
+	}
+
+	.radio_click_pseudoWay + label{
+		width: 14px;
+		height: 14px;
+		line-height: 16px;
+		border-radius: 50%;
+	}
+	
+	.checkbox_click_pseudoWay:checked + label, .radio_click_pseudoWay:checked + label{
+		border:1px solid red;
+	}
+
+	.checkbox_click_pseudoWay:checked + label::after{
+		content:'\2714';
+		color:red;
+		width: 9px;
+		height: 9px;
+		line-height: 9px;
+	}
+
+	.radio_click_pseudoWay:checked + label::after {
+		width: 9px;
+		height: 9px;
+		line-height: 9px;
+		content: ' ';
+		border-radius: 50%;
+		background: red;
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<div class="background">
+		<h3>background雪碧图实现</h3>
+
+		<input id="checkbox_click" class="checkbox_click" type="checkbox" name="Name">
+		<label for="checkbox_click"></label>
+
+		<input id="radio_click" class="radio_click" type="radio" name="Name"/>
+		<label for="radio_click"></label>
+	</div>
+	<div class="pseudoElements">
+		<h3>伪元素实现</h3>
+
+		<input id="checkbox_click_pseudoWay" class="checkbox_click_pseudoWay" type="checkbox" name="Name">
+		<label for="checkbox_click_pseudoWay"></label>
+
+		<input id="radio_click_pseudoWay" class="radio_click_pseudoWay"	type="radio" name="Name">
+		<label for="radio_click_pseudoWay"></label>
+	</div>
+</body>
+</html>
