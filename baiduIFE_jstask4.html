@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>queue</title>
+	<style type="text/css">
+		#left_out {
+			margin-left: 20px;
+		}
+		 ul li {
+			list-style: none;
+			display: inline-block;
+			height:30px;
+			line-height: 30px;
+			background-color: red;
+			margin: 10px;
+			color:black;
+			padding: 0px;
+		}
+	</style>
+</head>
+<body>
+	<input id="input" type="text" name="number_in" value="">
+	<button id="left_in">左侧入</button>
+	<button id="right_in">右侧入</button>
+	<button id="left_out">左侧出</button>
+	<button id="right_out">右侧出</button><br/>
+	<ul id="queue"></ul>
+	<script type="text/javascript">
+		var lf_in_btn = document.getElementById("left_in");
+		var rh_in_btn = document.getElementById("right_in");
+		var lf_out_btn = document.getElementById("left_out");
+		var rh_out_btn = document.getElementById("right_out");
+		var ul = document.getElementById("queue");
+
+		lf_in_btn.onclick = function(){
+			var text = document.getElementById("input").value;
+			var li = document.createElement("li");
+			var textNode = document.createTextNode(text);
+			li.appendChild(textNode);
+			ul.insertBefore(li,ul.firstChild);
+		}; 
+
+		rh_in_btn.onclick = function(){
+			var text = document.getElementById("input").value;
+			var li = document.createElement("li");
+			var textNode = document.createTextNode(text);
+			li.appendChild(textNode);
+			ul.insertBefore(li, null);
+		};
+
+		lf_out_btn.onclick = function(){
+			ul.removeChild(ul.firstChild);
+		};
+
+		rh_out_btn.onclick = function(){
+			ul.removeChild(ul.lastChild);
+		};
+
+	</script>
+</body>
+</html>
