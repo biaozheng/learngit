@@ -61,7 +61,7 @@
 			ul.removeChild(ul.lastChild);
 		};
 
-		inputcheck.onkeypress = function(){
+		inputcheck.onkeyup = function(){
 			var text = document.getElementById("input").value;
 			if(!((parseInt(text) >= 10) && (parseInt(text) <= 100))){
 				tips.style.visibility = "visible";
@@ -74,11 +74,11 @@
 			var i = 0;
 			var j = 0;
 			var temp = 0;
-			for(i; i < ul.children.length; i++){
-				for(j;j < ul.children.length; j++){
+			for(i = 0; i < ul.children.length; i++){
+				for(j = 0;j < ul.children.length-i-1; j++){
 						if(parseInt(ul.children[j].style.height) > parseInt(ul.children[j+1].style.height)){
-						temp = ul.children[j+1].offsetHeight;
-						ul.children[j+1].style.height = ul.children[j].offsetHeight;
+						temp = ul.children[j+1].style.height;
+						ul.children[j+1].style.height = ul.children[j].style.height;
 						ul.children[j].style.height = temp;
 					}
 				}
