@@ -23,50 +23,68 @@
 	<button id="left_out">左侧出</button>
 	<button id="right_out">右侧出</button>
 	<button id="sort">冒泡排序</button><br>
-	<div id="tip" style="visibility:hidden;">请输入10-100</div>
+	<div id="tip1" style="visibility:hidden;">请输入10-100</div>
+	<div id="tip2" style="visibility:hidden;">最大输入上限个数为50</div>
+	<div id="count"></div>
 	<ul id="queue"></ul>
 	<script type="text/javascript">
-		var lf_in_btn = document.getElementById("left_in");
-		var rh_in_btn = document.getElementById("right_in");
-		var lf_out_btn = document.getElementById("left_out");
-		var rh_out_btn = document.getElementById("right_out");
-		var ul = document.getElementById("queue");
-		var inputcheck = document.getElementById("input");
-		var sortbtn = document.getElementById("sort");
-		var tips = document.getElementById("tip");
+		var lf_in_btn = document.getElementById("left_in"),
+			rh_in_btn = document.getElementById("right_in"),
+			lf_out_btn = document.getElementById("left_out"),
+			rh_out_btn = document.getElementById("right_out"),
+			ul = document.getElementById("queue"),
+			inputcheck = document.getElementById("input"),
+			sortbtn = document.getElementById("sort"),
+			tips1 = document.getElementById("tip1"),
+			tips2 = document.getElementById("tip2"),
+			counts = document.getElementById("count");
 
-		lf_in_btn.onclick = function(){
+		lf_in_btn.onclick = function(event){
 			var text = document.getElementById("input").value;
 			var li = document.createElement("li");
 			var textNode = document.createTextNode(text);
-			li.appendChild(textNode);
-			li.style.height = (+text)+"px";
-			ul.insertBefore(li,ul.firstChild);
+			if(ul.children.length >= 50){
+				event.preventDefault();
+				tips2.style.visibility = "visible";
+			}else{
+				li.appendChild(textNode);
+				li.style.height = (+text)+"px";
+				ul.insertBefore(li,ul.firstChild);
+			}
+			counts.innerHTML = ul.children.length;
 		}; 
 
-		rh_in_btn.onclick = function(){
+		rh_in_btn.onclick = function(event){
 			var text = document.getElementById("input").value;
 			var li = document.createElement("li");
 			var textNode = document.createTextNode(text);
-			li.appendChild(textNode);
-			li.style.height = (+text)+"px";
-			ul.insertBefore(li, null);
+			if(ul.children.length >= 50){
+				event.preventDefault();
+				tips2.style.visibility = "visible";
+			}else{
+				li.appendChild(textNode);
+				li.style.height = (+text)+"px";
+				ul.insertBefore(li, null);
+			}
+			counts.innerHTML = ul.children.length;
 		};
 
 		lf_out_btn.onclick = function(){
 			ul.removeChild(ul.firstChild);
+			counts.innerHTML = ul.children.length;
 		};
 
 		rh_out_btn.onclick = function(){
 			ul.removeChild(ul.lastChild);
+			counts.innerHTML = ul.children.length;
 		};
 
 		inputcheck.onkeyup = function(){
 			var text = document.getElementById("input").value;
-			if(!((parseInt(text) >= 10) && (parseInt(text) <= 100))){
-				tips.style.visibility = "visible";
+			if((parseInt(text) >= 10) && (parseInt(text) <= 100)){
+				tips1.style.visibility = "hidden";
 			}else{
-				tips.style.visibility = "hidden";
+				tips1.style.visibility = "visible";
 			}
 		};
 
@@ -77,9 +95,7 @@
 			for(i = 0; i < ul.children.length; i++){
 				for(j = 0;j < ul.children.length-i-1; j++){
 						if(parseInt(ul.children[j].style.height) > parseInt(ul.children[j+1].style.height)){
-						temp = ul.children[j+1].style.height;
-						ul.children[j+1].style.height = ul.children[j].style.height;
-						ul.children[j].style.height = temp;
+						ul.insertBefore(ul.children[j+1],ul.children[j]);
 					}
 				}
 			}
