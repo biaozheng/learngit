@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>数组，字符串选择操作</title>
+	<style type="text/css">
+	li {
+	background-color: red;
+	color: black;
+	display: inline-block;
+	margin: 10px;
+	}
+	em {
+	background-color: blue;
+	}
+	</style>
+</head>
+<body>
+	<textarea rows="10" id="text" placeholder="随意修改内容"></textarea>
+	<button id="insert">插入</button>
+	<button id="query">查询</button>
+	<input type="text" name="query_text" id="query_text" placeholder="请输入要查找的元素">
+	<ul id="queue"></ul>
+	<script>
+		var btn_click = document.getElementById("insert"),
+			btn_cilck2 = document.getElementById("query"),
+			text = document.getElementById("text"),
+			q_text = document.getElementById("query_text"),
+			ul = document.getElementById("queue");
+
+		btn_click.onclick = function(){
+			var list = [],
+				list2 = [];
+			list = text.value.split(/\ |\n|\,|\、|\，/g);
+			for(var i = 0; i < list.length; i++){
+				list2[i] = document.createElement("li");
+				list2[i].appendChild(document.createTextNode(list[i]));
+				ul.appendChild(list2[i]);
+			}
+		};
+
+		btn_cilck2.onclick = function(){
+			var each_li = document.querySelectorAll("ul li"),
+				query = document.getElementById("query_text");
+			var re = new RegExp(""+query.value+"", "gim");
+			for(var i = 0; i < each_li.length; i++){
+				if(each_li[i].firstChild.nodeValue.indexOf(query.value) !== -1){
+					each_li[i].innerHTML = each_li[i].firstChild.nodeValue.toString().replace(re,"<em>"+query.value+"</em>").toString();
+				}
+			}
+		};
+	</script>
+</body>
+</html>
