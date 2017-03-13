@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{
+		height:100%;
+		position: relative;
+	}
+	div {
+		background-color: white;
+		border: 1px solid black;
+		position: relative;
+		margin:0;
+		padding:0;
+	}
+	#root {
+		width:300px;
+		height: 150px;
+		margin:0 auto;
+	}
+	.floor1 {
+		width: 280px;
+		height: 50px;
+		margin:15px auto;
+	}
+	.floor2 {
+		width: 40%;
+		height: 80%;
+		display: inline-block;
+		margin:4px 11px;
+	}
+	.floor3 {
+		width: 40%;
+		height: 80%;
+		display: inline-block;
+		margin:2px 3px;
+	}
+	#group {
+		position:static;
+		border: none;
+		margin:0 auto;
+	}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<div class="floor1">
+			<div class="floor2">
+				<div class="floor3"></div>
+				<div class="floor3"></div>
+			</div>
+			<div class="floor2">
+				<div class="floor3"></div>
+				<div class="floor3"></div>
+			</div>
+		</div>
+		<div class="floor1">
+			<div class="floor2">
+				<div class="floor3"></div>
+				<div class="floor3"></div>
+			</div>
+			<div class="floor2">
+				<div class="floor3"></div>
+				<div class="floor3"></div>
+			</div>
+		</div>
+	</div>
+	<div id="group">
+		<button id="DFS">深度优先遍历前序</button>
+		<button id="BFS">广度优先遍历前序</button>
+	</div>
+</body>
+</html>
