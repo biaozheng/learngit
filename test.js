@@ -161,9 +161,16 @@ function count(arr, item){
 	return time;
 }
 
-console.log(count([1,'','',1],1));
+console.log(count([1,'','',1,2,3],1));
 */    //统计元素出现次数
 
+/*  通过正则表达式进行筛选匹配，不过因为正则表达式开销过大，不推荐用这种方法
+function count(arr, item){
+	var reg = new RegExp(""+item+"","gi");
+	return arr.join("-").match(reg).length;
+}
+console.log(count([1,'','',1,1,3],1));
+*/
 
 
 /*
