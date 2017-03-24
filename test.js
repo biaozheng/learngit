@@ -249,3 +249,13 @@ for(i=0;i < fibonaci.length;i++){
 	console.log(fibonaci[i]);
 }*/   //菲波那切数列
 
+/*
+function fn(str){
+	var temp = [];
+	temp = str.replace(/([A-Z])([a-z]+)([A-Z])/g,"$1$2_$3").toLowerCase();
+	return temp;
+}
+
+console.log(fn("HelloWorld"));
+ */ //驼峰命名法转化为下划线分割命名法
+
