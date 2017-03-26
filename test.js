@@ -349,3 +349,20 @@ while(n < 5){
 
 console.log(result.toFixed(3));
 */  //数学期望四舍五入保留三位小数
+
+
+/*
+
+function functionFunction(str) {
+	var temp = str;
+    function f(str2){
+        var result = [];
+        result[0] = temp;
+        result[1] = str2;
+        return result.join(', ');;
+    }
+    return f;
+}
+
+console.log(functionFunction('Hello')('World'));
+ */  //函数闭包的应用,多级传参，参数拼接
