@@ -366,3 +366,26 @@ function functionFunction(str) {
 
 console.log(functionFunction('Hello')('World'));
  */  //函数闭包的应用,多级传参，参数拼接
+
+
+/*
+function makeClosures(arr, fn) {
+	var func_arr = [];
+    for(var i = 0;i < arr.length;i++){
+        func_arr[i] = function(num){
+           return function(){
+           	 return fn(arr[num])
+           };
+        }(i);
+    };
+    return func_arr;
+}
+var some = [1,2,3];
+var square =  function(x){
+	return x*x;
+};
+var funcs = makeClosures(some, square);
+console.log(funcs[2]());
+*/ // 闭包的使用，其中for循环中var声明的控制变量传入闭包中，会导致最后结果出错。
+// 因为这里的var声明的变量作用于函数作用域内，并不是每次for循环.最后会导致传入的参数都是i的最后一个状态，
+// 所以执行的时候访问不到对应数组的该参数，函数执行无效。必须在每一次循环的时候立即传入i的值。
