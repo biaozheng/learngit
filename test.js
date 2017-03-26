@@ -249,7 +249,7 @@ for(i=0;i < fibonaci.length;i++){
 	console.log(fibonaci[i]);
 }*/   //菲波那切数列
 
-///*
+/*
 function fn(str){
 	var temp = [];
 	temp = str.replace(/([a-z])([A-Z])/g,"$1_$2").toLowerCase();
@@ -258,4 +258,94 @@ function fn(str){
 
 console.log(fn("HelloWorldThree"));
  //*/ //驼峰命名法转化为下划线分割命名法
+ //
+ //
+ /*
+ 		var temp = "3.125+5*7";
+ 		var input_arrays = temp.split("");
+		var stack1 = [];
+		var stack2 = [];
+		for(var i = 0; i < input_arrays.length; i++){
+            if(1 <= +input_arrays[i] && +input_arrays[i] <= 9){
+                stack1.unshift(+input_arrays[i]);
+                console.log(stack1);
+            }else{
+                stack2.unshift(input_arrays[i]);
+                console.log(stack2);
+            }
+        }
+        for(var j = 0; j < stack1.length;j++){
+            if(stack1.length !== 0){
+                var one = stack1.pop();
+                console.log(stack1);
+            }else{
+                break;
+            }
+            if(stack2.length !== 0){
+                var operate = stack2.pop();
+                console.log(stack1);
+            }else{
+                break;
+            }
+            if(stack1.length !== 0){
+                var two = stack1.pop();
+                console.log(stack1);
+            }else{
+                break;
+            }
+            switch(operate){
+                case '-': stack1.unshift(one - two);
+                    break;
+                case '+': stack1.unshift(one + two);
+                    break;
+                case '*': stack1.unshift(one * two);
+                    break;
+            }
+        }
+        console.log(stack1[0]);        
 
+//*/   //无视计算优先级的计算器
+
+/*
+var line = "100 100 40 99 99 99 40 100";
+var result = [];
+var tokens = line.split(' ');
+       for (var i = 0; i < tokens.length; i++) {
+           // 题目逻辑求和，边读取边计算
+           var num = tokens[i];
+           if(tokens.indexOf(num) !== tokens.lastIndexOf(num)){
+               if(result.indexOf(num) === -1){
+                   result.push(num);
+               }
+           }else{
+               result.push(num);
+           }
+       }
+
+       console.log(result.join(' '));
+*/ //集合的确定性，互异性，无序性(数组去重)
+
+/*
+var one = "3";
+var two =["0 50","1 20", "2 30"];
+var n = 1,
+    l = -1,
+    result = 0;
+while(n < 5){
+	if(n === 1){
+    	l = parseFloat(one);
+    	n++;
+    	
+    }
+     if(n < l+2 && n > 0){
+     	var  a = parseFloat(two[n-2].split(' ')[0]);
+     	console.log(a);
+        var  b = parseFloat(two[n-2].split(' ')[1]/100);
+        console.log(b);
+        result += a*b;
+        n++;
+     }
+}
+
+console.log(result.toFixed(3));
+*/  //数学期望四舍五入保留三位小数
