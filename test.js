@@ -389,3 +389,19 @@ console.log(funcs[2]());
 */ // 闭包的使用，其中for循环中var声明的控制变量传入闭包中，会导致最后结果出错。
 // 因为这里的var声明的变量作用于函数作用域内，并不是每次for循环.最后会导致传入的参数都是i的最后一个状态，
 // 所以执行的时候访问不到对应数组的该参数，函数执行无效。必须在每一次循环的时候立即传入i的值。
+// 
+/*
+function callIt(fn) {
+    var str = [];
+    for(var i = 1; i < arguments.length;i++){
+        str[i-1] = arguments[i];
+    }
+    return fn.apply(this, str);
+}
+
+function add(a,b){
+	return a+b;
+} 
+
+console.log(callIt(add,1,1));
+*/  //使用apply调用函数
