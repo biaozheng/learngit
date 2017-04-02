@@ -405,3 +405,56 @@ function add(a,b){
 
 console.log(callIt(add,1,1));
 */  //使用apply调用函数
+
+/*
+
+function createModule(str1, str2) {
+    var one = str1, two = str2;
+	var wenhou = {
+        greeting:str1,
+        name:str2,
+        sayIt:function(){
+            return one + ', ' + two;
+        }
+    };
+    return wenhou;
+}
+
+console.log(createModule("hello","jam").sayIt());
+// */ //模块
+
+/* 
+function convertToBinary(num) {
+    var num10 = (+num).toString(2);
+    if(num < 256){
+        var len = num10.length;
+        var result = "00000000";
+        var some =  result.slice(0,8-len);
+        return some.concat(num10);
+    }
+    else{
+        return num10;
+    }
+}
+
+console.log(convertToBinary(257));
+*/ //十进制数转二进制， 不满8位，补零
+
+/*
+function multiply(a, b) {
+ var result = (+a)*(+b);
+ return result.toFixed(b.length);
+}
+*/ 
+
+/*
+function iterate(obj) {
+    var arr = [];
+ for(var i in obj){
+     if(obj.hasOwnProperty(i)){
+         arr.push(i+": "+obj[i]);
+     }
+ }
+    return arr;
+}
+*/  //遍历所有对象自身的属性，非原型链上的
