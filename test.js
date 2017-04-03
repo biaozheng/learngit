@@ -458,3 +458,42 @@ function iterate(obj) {
     return arr;
 }
 */  //遍历所有对象自身的属性，非原型链上的
+
+/*
+function captureThreeNumbers(str) {
+     return (/\d{3}/i).test(str) ? str.match(/\d{3}/i)[0] : false;
+}
+
+console.log(captureThreeNumbers('9876543'));
+*/ //匹配字符中最新的连续三个字符串.
+
+/*
+function matchesPattern(str) {
+    return (/^\d{3}-\d{3}-\d{4}$/gi).test(str);
+}
+*/  //匹配xxx-xxx-xxxx这种格式
+
+/*
+function isUSD(str) {
+    return (/^\$\d{1,3}(,\d{3})*(\.\d{2})?$/gi).test(str);
+}
+
+*/   //符合美元格式的字符串
+
+/*
+var id = null;
+function count(start, end){
+	if(start <= end){
+        console.log(start);
+        start++;
+        id = setTimeout(function(){
+            count(start,end);
+        },100);
+    }
+	return {
+        cancel:function(){
+		clearTimeout(id);
+	}
+    }
+}
+*/      //打点计时器
