@@ -497,3 +497,54 @@ function count(start, end){
     }
 }
 */      //打点计时器
+
+/*
+var first = "5 4";
+var second = "6 3 5 7";
+
+function maxGet(first, second){
+	var line1 = first.split(" "),
+		line2 = second.split(" "),
+		minPrice;
+	line2 = line2.sort(function(pre,cur,index,array){
+			if(parseInt(pre) > parseInt(cur)){
+				return 1;
+			}
+			else{
+				return -1;
+			}
+	});
+	minPrice = line2[0];
+	console.log(line2);
+	if(parseInt(line1[0]) >= parseInt(line1[1])){
+		for(var i = 0; i < line2.length-1; i++){
+			(function(j){
+			if(parseInt(minPrice)*(line2.length-j) < parseInt(line2[j+1])*(line2.length-j-1)){
+				minPrice = line2[j+1];
+				console.log(minPrice);
+			}else{
+				console.log(minPrice);
+			}
+			}(i));
+		}
+	}
+	else{
+		minPrice = line2[line2.length - parseInt(line1[0])];
+	}
+	console.log(minPrice);
+}
+
+maxGet(first,second);
+
+*/
+
+/*
+function bindThis(f,oTarget){
+	return function(){
+		return f.apply(oTarget,arguments);
+	};
+}
+
+console.log(bindThis(function(a, b){return this.test + a + b;}, {test: 1})(2, 3));
+*/  //闭包的使用
+
