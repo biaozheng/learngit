@@ -548,3 +548,39 @@ function bindThis(f,oTarget){
 console.log(bindThis(function(a, b){return this.test + a + b;}, {test: 1})(2, 3));
 */  //闭包的使用
 
+/* 剑指offer 二维数组中的查找
+function Find(target, array)
+{
+    // write code here
+    var i = array[0].length-1;
+    var j = 0;
+    for(;i >= 0; i--){
+        if(array[j][i] === target){
+            return true;
+        }else if(array[j][i] > target){
+            continue;
+        }else if(array[j][i] < target){
+             for(;j < array.length;j++){
+                if(array[j][i] === target){
+					return true;
+                }else if(array[j][i] > target){
+                    break;
+                }else if(array[j][i] < target){
+                	if(j === array.length-1){
+                		return false;
+                	}else{
+                		continue;
+                	}
+                }
+            }
+            continue;
+        }
+    }
+    return false;
+}
+
+var arr = [[1,2,8,9],[2,4,9,12],[4,7,10,13],[6,8,11,15]];
+var num = 16;
+
+console.log(Find(num,arr));
+*/
