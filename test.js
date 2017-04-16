@@ -584,3 +584,66 @@ var num = 16;
 
 console.log(Find(num,arr));
 */
+
+
+/*
+function replaceSpace(str)
+{
+    // write code here
+   return str.replace(/\s/gi,"%20");
+}
+*/ //替换掉字符里的空格
+
+function printListFromTailToHead(head)
+{
+    // write code here
+    var current = head;
+    if(current !== null){
+     	  stack.push(current.val);
+          if(current.next !== null){
+              printListFromTailToHead(current.next);
+          }
+          return stack.reverse(); 
+    }else{
+        return [];
+    }
+}
+
+function LinkedList(){
+	var Node = function(element){
+		this.element = element;
+		this.next = null;
+	}
+
+	var length = 0;
+	var head = null;
+
+	this.append = function(element){
+		var node = new Node(element);
+	};
+	this.insert = function(position, element){};
+	this.removeAt = function(position){};
+	this.remove = function(element){};
+	this.indexOf = function(element){};
+	this.isEmpty = function(){};
+	this.size = function(){};
+	this.getHead = function(){};
+	this.toString = function(){};
+	this.print = function(){};
+}
+console.log(printListFromTailToHead());
+
+
+/*
+function printListFromTailToHead(head)
+{
+    // write code here
+    var current = head;
+    var stack = [];
+    while(current){
+        stack[stack.length] = current.val;
+        current = current.next;
+    }
+    return (stack.reverse());
+}
+*/ //
