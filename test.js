@@ -594,6 +594,7 @@ function replaceSpace(str)
 }
 */ //替换掉字符里的空格
 
+/*
 function printListFromTailToHead(head)
 {
     // write code here
@@ -620,19 +621,100 @@ function LinkedList(){
 
 	this.append = function(element){
 		var node = new Node(element);
+		if(head === null){
+			head = node;
+		}else{
+			current = head;
+			while(current.next){
+				current = current.next;
+			}
+			current.next = node;
+		}
+		length++;
 	};
-	this.insert = function(position, element){};
-	this.removeAt = function(position){};
-	this.remove = function(element){};
-	this.indexOf = function(element){};
-	this.isEmpty = function(){};
-	this.size = function(){};
-	this.getHead = function(){};
-	this.toString = function(){};
-	this.print = function(){};
+	this.insert = function(position, element){
+		if(position >= 0 && position <= length){
+			var node = new Node(element),
+			    current = head,
+			    previous,
+			    index = 0;
+			if(position === 0){
+				node.next = current;
+				head = node;
+			}else{
+				while(index++ < position){
+					previous = current;
+					current = current.next;
+				}
+				node.next = current;
+				previous.next = node;
+			}
+			length++;
+			return true;
+		}else{
+			return false;
+		}
+	};
+	this.removeAt = function(position){
+		if(position > -1 && position < length){
+			var current = head,previous,index = 0 ;
+			if(position === 0){
+				head === current.next;
+			}else{
+				while(index++ < position){
+					previous = current;
+					current = current.next;
+				}
+				previous.next = current.next;
+			}
+			length--;
+			return current.element;
+		}else{
+			return null;
+		}
+	};
+	this.remove = function(element){
+		var index = this.indexOf(element);
+		return this.removeAt(index);
+	};
+	this.indexOf = function(element){
+		var current = head,
+			index = 0;
+			while(current){
+				if(element === current.element){
+					return index;
+				}
+				index++;
+				current = current.next;
+			}
+			return -1;
+
+	};
+	this.isEmpty = function(){
+		if(head !== null){
+			return false;
+		}else{
+			return true;
+		}
+	};
+	this.size = function(){
+		return length;
+	};
+	this.getHead = function(){
+		return head;
+	};
+	this.toString = function(){
+		var current = head,
+		string = '';
+		while(current){
+			string += ',' + current.element;
+			current = current.next;
+		}
+		return string.slice(1);
+	};
 }
 console.log(printListFromTailToHead());
-
+*/
 
 /*
 function printListFromTailToHead(head)
@@ -647,3 +729,109 @@ function printListFromTailToHead(head)
     return (stack.reverse());
 }
 */ //
+
+/*
+var temp = [], str,num = 0;
+var arr = [12933,111111,59220,69433,59220,111111,0];
+while( parseInt((str = read_line())) !== 0){
+
+	if(temp.length === 0){
+    	temp.push(str);
+    }else if(temp.indexOf(str) === -1){
+    	temp.push(str);
+    }
+}
+print(temp.length);
+*/
+
+/*
+function palindrome(str) {
+  // Good luck!
+  var arr = str.replace(/[\W\s\_]+/gi,"").toLowerCase();
+  console.log(arr);
+  for(var i = 0; i < Math.floor(arr.length/2); i++){
+    if(arr[i] === arr[arr.length-1-i]){
+    }else{
+       return false; 
+    }
+  }
+  return true;
+}
+console.log(palindrome("0_0 (: /-\ :) 0-0"));
+*/ //去除空白符号和各种标点符号后，判断一个字符串是不是一个回文串
+
+/*
+function findLongestWord(str) {
+  var temp = str.split(" ");
+  console.log(temp[0].length);
+  var max = (temp[0]).length;
+  for(var i = 0;i < temp.length-1;i++){
+    if((temp[i+1]).length > max){
+      max = (temp[i+1]).length;
+    }
+  }
+  return max;
+}
+
+findLongestWord("The quick brown fox jumped over the lazy dog");
+*/ //一串字符串中寻找最长的单词
+
+/*
+function titleCase(str) {
+  var arr = str.toLowerCase().split(" ");
+  arr = arr.map(function(current,index,array){
+  	return current.replace(/^\w/,current[0].toUpperCase());
+  });
+  return arr.join(" ");
+}
+
+console.log(titleCase("I'm a little tea pot"));
+*/   //把句子中的每个单词首字母大写，别的小写
+
+/*
+function largestOfFour(arr) {
+  // You can do this!
+  arr = arr.map(function(item){
+   return item.reduce(function(prev,cur,index,array){
+     return Math.max(prev, cur);
+   });
+  });
+  return arr;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+*/  //返回由每个数字中最大值组成的数组
+
+/*
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  var len = target.length;
+  if(str.substr(str.length-len) === target){
+     return true; 
+  }else{
+    return false;
+  }
+}
+
+confirmEnding("Bastian", "n");
+*/    //判断一个单词是否以某个字符结尾
+
+/*
+function repeat(str, num) {
+  // repeat after me
+  if(num < 0){
+    return "";
+  }else{
+  	var add = str;
+   while(--num){
+     str += add;
+   }
+    return str;
+  }
+}
+
+console.log(repeat("abc", 3));
+*/   //按给定数字，重复添加相同字符，如果为负数，就返回空字符串
+
+
