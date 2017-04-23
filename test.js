@@ -862,3 +862,40 @@ function slasher(arr, howMany) {
 slasher([1, 2, 3], 2);
 */   // 返回一个数组被截断n个元素之后的剩余元素.
 
+
+/*
+function mutation(arr) {
+  var first = arr[0].toLowerCase(),
+      second = arr[1].toLowerCase(),
+      result = true;
+  for(var i = 0;i < second.length;i++){
+    result = ((first.indexOf(second[i]) > -1) ? true : false) && result;
+  }
+  return result;
+}""
+
+mutation(["hello", "hey"]);
+*/   //蛤蟆吃队友，也就是前者是否包含后者所有元素问题
+
+/*
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  return arr.filter(function(cur,index,array){
+    if(cur === false|| cur === null){
+      return false;
+    }
+    if(cur === ""||cur === undefined){
+      return false;
+    }
+    if(!(typeof cur === "string")){
+      if(isNaN(cur)||cur === 0){
+      return false;
+    }  
+    }
+    
+    return true;
+  });
+}
+
+bouncer([7, "ate", "", false, 9]);
+*/   //删除数组中所有的假值，例如null,false,0,"",undefined,NaN.
