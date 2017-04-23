@@ -834,4 +834,31 @@ function repeat(str, num) {
 console.log(repeat("abc", 3));
 */   //按给定数字，重复添加相同字符，如果为负数，就返回空字符串
 
+/*
+function chunk(arr, size) {
+  // Break it up.
+  var temp =[], flag = 0;
+  for(var i = 0; i < Math.ceil(arr.length/size); i++){
+    temp[i] = arr.slice(flag,size+flag);
+    flag += size;
+  }
+  return temp;
+}
+
+chunk(["a", "b", "c", "d"], 2);
+*/   //猴子吃香蕉，分段问题，固定长度分割几份
+
+
+/*
+function slasher(arr, howMany) {
+  // it doesn't always pay to be first
+  if(howMany >= arr.length){
+    return [];
+  }else{
+    return arr.slice(howMany);
+  }
+}
+
+slasher([1, 2, 3], 2);
+*/   // 返回一个数组被截断n个元素之后的剩余元素.
 
