@@ -899,3 +899,12 @@ function bouncer(arr) {
 
 bouncer([7, "ate", "", false, 9]);
 */   //删除数组中所有的假值，例如null,false,0,"",undefined,NaN.
+
+/*
+function des(str){
+	var num = +str;
+	return num.toString(2);
+}
+
+console.log(des(""));
+*/    //十进制数转二进制数,简单方法
