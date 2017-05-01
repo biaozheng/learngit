@@ -908,3 +908,44 @@ function des(str){
 
 console.log(des(""));
 */    //十进制数转二进制数,简单方法
+
+/*
+function destroyer(arr) {
+  // Remove all the values
+  var i = 1,
+      other = [];
+  for(;i < arguments.length;i++){
+    other[i] = arguments[i];
+  }
+  return arr.filter(function(item,index,array){
+    if(other.indexOf(item) === -1){
+      return true;
+    }else{
+      delete false;
+    }
+  });
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+*/    //实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值
+
+/*
+function where(arr, num) {
+  // Find my place in this sorted array.
+  var temp = arr.splice(0);
+  temp.push(num);
+  temp.sort(function(value1,value2){
+  	if(value1 < value2){
+  		return -1;
+  	}else if(value1 > value2){
+  		return 1;
+  	}else{
+  		return 0;
+   	}
+  });
+  return temp.indexOf(num);
+}
+
+console.log(where([3, 10, 5], 3));
+*/   //删除数组中的指定元素
+
