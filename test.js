@@ -949,3 +949,23 @@ function where(arr, num) {
 console.log(where([3, 10, 5], 3));
 */   //删除数组中的指定元素
 
+function rot13(str) { // LBH QVQ VG!
+	var result = [];
+  for(var i =0; i < str.length;i++){
+  	var cur = str.charCodeAt(i);
+  	console.log(str[i]);
+  	if(cur >= 65 && cur <= 90){
+  		if(cur+13 > 90){
+  			result.push(String.fromCharCode(cur+13-90+64));
+  		}else{
+  			result.push(String.fromCharCode(cur+13));
+  		}
+  	}else{
+  		result.push(String.fromCharCode(cur));
+  	}
+  }
+  return result.join("");
+}
+
+// Change the inputs below to test
+console.log(rot13("SERR PBQR PNZC"));
