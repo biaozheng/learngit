@@ -85,23 +85,23 @@
 		var btn_left = document.getElementById("dfs");
 
 		function DFS(startNode){
-			startNode.style.background = "red";
-			setTimeout("",1000);
+			startNode.style.backgroundColor = "red";
+			setTimeout(function(){},1000);
 			if(startNode.firstChild !== null){
-				startNode.style.background = "white";
-				setTimeout(DFS(startNode.firstChild),100);
+				startNode.style.backgroundColor = "white";
+				setTimeout(function(){DFS(startNode.firstChild);},100);
 				if(startNode.lastChild !== null){
-					setTimeout(DFS(startNode.lastChild),100);
+					setTimeout(function(){DFS(startNode.lastChild);},100);
 				}else{
 					return;
 				}
 			}else{
-				startNode.style.background = "white";
+				startNode.style.backgroundColor = "white";
 				return;
 			}
 		}
 
-		btn_left.addEventListener("click", DFS(root_node),false);
+		btn_left.addEventListener("click", function(){DFS(root_node);},false);
 	</script>
 </body>
 </html>

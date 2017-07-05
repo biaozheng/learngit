@@ -949,6 +949,7 @@ function where(arr, num) {
 console.log(where([3, 10, 5], 3));
 */   //删除数组中的指定元素
 
+/*
 function rot13(str) { // LBH QVQ VG!
 	var result = [];
   for(var i =0; i < str.length;i++){
@@ -969,3 +970,5 @@ function rot13(str) { // LBH QVQ VG!
 
 // Change the inputs below to test
 console.log(rot13("SERR PBQR PNZC"));
+*/ //从字符串中分理出单个字符
+
