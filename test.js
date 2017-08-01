@@ -972,3 +972,34 @@ function rot13(str) { // LBH QVQ VG!
 console.log(rot13("SERR PBQR PNZC"));
 */ //从字符串中分理出单个字符
 
+/*
+function commonParentNode(oNode1, oNode2) {
+    if(oNode1.contains(oNode2)){
+        return oNode1;
+    }else if(oNode2.contains(oNode1)){
+        return oNode2;
+    }else{
+        var node = oNode1.parentNode;
+        do{
+            if(node.contains(oNode2)){
+                return node;
+            }else{
+              node = node.parentNode;
+            }
+        }while(node !== null)
+    }
+}
+*/ //给出两个节点，求最近的公共父节点，可以包含自身
+
+/*
+function fibonacci(n) {
+    if(n == 1){
+        return 1;
+    }
+    if(n == 0){
+        return 0;
+    }
+    return fibonacci(n-1)+fibonacci(n-2);
+}
+*/ //斐波那契数列
+
