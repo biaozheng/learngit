@@ -1003,3 +1003,18 @@ function fibonacci(n) {
 }
 */ //斐波那契数列
 
+/*
+function strLength(s, bUnicode255For1) {
+    var len = s.length;
+    if(bUnicode255For1){
+        return len;
+    }else{
+        for(var i in s){
+            if(s.charCodeAt(i) > 255){
+                len++;
+            }
+        }
+    }
+    return len;
+}
+*/ //获取字符串长度，第二个参数为true,表示所有字符长度按1算，否则Unicode编码大于255就按2算
