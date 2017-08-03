@@ -1018,3 +1018,68 @@ function strLength(s, bUnicode255For1) {
     return len;
 }
 */ //获取字符串长度，第二个参数为true,表示所有字符长度按1算，否则Unicode编码大于255就按2算
+
+/*
+function rgb2hex(sRGB) {
+    if(/^rgb\([0-9]+\,\s*[0-9]+\,\s*[0-9]+\)$/i.test(sRGB)){
+        return sRGB.replace(/^rgb\(([0-9]+)\,\s*([0-9]+)\,\s*([0-9]+)\)$/i, function($0,$1,$2,$3){
+            var R = (+$1) < 16 ?'0'+(+$1).toString(16).slice(-2):(+$1).toString(16).slice(-2),
+                G = (+$2) < 16 ?'0'+(+$2).toString(16).slice(-2):(+$2).toString(16).slice(-2),
+                B = (+$3) < 16 ?'0'+(+$3).toString(16).slice(-2):(+$3).toString(16).slice(-2);
+            return '#'+R+G+B;
+        });
+    }else{
+        return sRGB;
+    }
+}
+
+console.log(rgb2hex('rgb(15,255, 255)'));
+*/   //颜色字符串转换，把输入为rgb(*,*,*)转换为#ffffff形式，1. rgb 中每个 , 后面的空格数量不固定
+     //2. 十六进制表达式使用六位小写字母
+     //3. 如果输入不符合 rgb 格式，返回原始输入
+
+/*
+function cssStyle2DomStyle(sName) {
+	var arr = sName.split("-");
+    for(var i in arr){
+    	if(arr[0] === ""){
+    		if(i >= 2){
+	            var temp = arr[i].split("");
+	            var Bighead = temp.shift();
+	            temp.unshift(Bighead.toLocaleUpperCase());
+	            arr[i] = temp.join("");
+        	}
+    	}else{
+    		if(i >= 1){
+	            var temp = arr[i].split("");
+	            var Bighead = temp.shift();
+	            temp.unshift(Bighead.toLocaleUpperCase());
+	            arr[i] = temp.join("");
+        	}
+    	}
+    }
+    return arr.join("");
+}
+
+console.log(cssStyle2DomStyle('-webkit-border-image'));
+*/ //驼峰命名
+
+/*
+function count(str) {
+	var object = {};
+    for(var i in str){
+        if(/^\s/.test(str[i])){
+            continue;
+        }else{
+            if(object[str[i]] === undefined){
+                object[str[i]] = 1;
+            }else{
+                object[str[i]] += 1;
+            }
+        }
+    }
+    return object;
+}
+
+console.log(count('hello world'));
+*/  //统计字符串的单词频率，用键值对的形式输出.
