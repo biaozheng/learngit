@@ -225,10 +225,7 @@ console.log(parse2Int('232sdss235da'));
 	var result = new Array();
 	for(var i=0;i<10;i++){
 		result[i] = function(num){
-			return function(){
-				console.log(num);
-				return num;
-			};
+			return num
 		}(i);
 	}
 	return result;
