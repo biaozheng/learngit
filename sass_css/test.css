@@ -1,5 +1,4 @@
-body {
-  color: red;
-  font-size: 6px; }
+.box:before {
+  content: "asd"; }
 
 /*# sourceMappingURL=test.css.map */
