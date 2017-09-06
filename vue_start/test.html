@@ -8,10 +8,11 @@
 <body>
 	<div id="app">
 		<!--vue测试用例v-bind在绑定的dom属性上应用指定的行为-->
-		<span v-bind:title = "message">
+		<!-- 响应式的更新元素属性 可以缩写:title="message1"-->
+		<span v-bind:title = "message1">
 			鼠标悬停几秒钟查看此处动态绑定的提示信息！
 		</span>
-		<!--v-if 绑定dom结构到数据.-->
+		<!--v-if 绑定dom结构到数据. 根据真假值是否显示该节点 -->
 		<p v-if="seen">You are seen me</p>
 		<ol>
 		<!-- v-for 绑定数组数据渲染一个项目列表-->
@@ -19,18 +20,44 @@
 				{{ todo.text }}
 			</li>
 		</ol>
+		<!-- 数据绑定用Mustache语法，双大括号表示文本插值，双向绑定，数据对象上的message2属性发生改变，插值处的内容都会更新 v-once指令 可以一次性插值,但是会影响该节点上的所有数据绑定-->
+		<p>{{ message2 }}</p>
+		<!-- v-on 绑定一个事件监听器 缩写为@click="reverseMessage"-->
+		<button v-on:click='reverseMessage'>翻转文本</button>
+		<p>Original message: "{{ message3 }}"</p>
+		<p>Computed reversed message: "{{ reversedMessage2 }}"</p>
 	</div>
+
 	<script type="text/javascript">
 		var  app = new Vue({
 			el: '#app',
 			data: {
-				message: '页面加载于 ' + new Date().toLocaleString(),
+				message1: '页面加载于 ' + new Date().toLocaleString(),
+				message2: 'Hello Vue.js!',
+				message3: 'hello',
 				seen: true,
 				todos: [
 					{text: '学习 javascript'},
 					{text: '学习Vue'},
 					{text: '整个牛项目'}
-				]
+				],
+				a: 'good boy'
+			},
+			methods: {
+				reverseMessage: function(){
+					this.message2 = this.message2.split('').reverse().join('');
+				}
+			},
+			//计算属性 函数将用作app.reversedMessage的getter函数
+			computed: {
+				reversedMessage2: function(){
+					return this.message3.split('').reverse().join('');
+				}
+			},
+			// 生命周期钩子 created 用来在一个实例被创建之后执行代码
+			// this 指向调用的实例
+			created: function (){
+				alert('a is: ' + this.a)
 			}
 		})
 	</script>
