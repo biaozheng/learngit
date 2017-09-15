@@ -1080,3 +1080,125 @@ function count(str) {
 
 console.log(count('hello world'));
 */  //统计字符串的单词频率，用键值对的形式输出.
+
+/*
+var input = parseInt('13'),
+    str = "",
+    sum = input;
+
+function product1(num){
+    return (num-1)/2;
+}
+
+function product2(num){
+    return (num-2)/2;
+}
+
+function judge(){
+    if(sum % 2 === 0){
+        sum = product2(sum);
+        str += '2';
+    }else{
+        sum = product1(sum);
+        str += '1';
+    }
+}
+
+while(sum !== 0){
+    judge();
+}
+
+str = str.split('').reverse().join('');
+console.log(str);
+*/   //
+
+/*
+var input = "aaabbaaaaa".split(''),
+    average = 0,
+    l = 0,
+    time = 1,
+    segment = 1,
+    littleNum = 0,
+    result = [];
+
+for(; l < input.length-1;l++){
+    if(input[l] !== input[l+1]){
+        average += time;
+        segment += 1;
+        time = 1; 
+        if(l == input.length-2){
+          average += time;
+        }
+    }else{
+        time += 1;
+        if(l == input.length-2){
+          average += time;
+        }
+    }
+}
+
+result = (''+average/segment).split('.');
+if(result[1] !== undefined){
+    result[1] = result[1].slice(0,2);
+}else{
+    result[1] = "00";
+}
+
+console.log(result[0],result[1]);
+*/
+
+// var reg1 = /[a-z]/g,
+//     reg2 = /[A-Z]/g,
+//     reg3 = /[0-9]/g,
+//     reg4 = /[^a-zA-Z0-9]/g,
+//     reg5 = /^[0-9]/g;
+// var i = 1,
+//     a = ["4","aabbccdd","ABCde0","ABCedf012345","0988763333333"];
+
+// //登录密码检查。数字开头不合法，只含有数字大小写字母，长度不小于8，至少包含两种数据
+// var length = parseInt(read_line()),
+//     firstJudge = 0,
+//     secondJudge = 0,
+//     thirdJudge = 0,
+//     sum = 0;
+                     
+// while(length>0){
+//     var _password  = read_line();
+    
+//     thirdJudge = reg3.test(_password)?1:0;
+//     secondJudge = reg2.test(_password)?1:0;
+//     firstJudge = reg1.test(_password)?1:0;
+    
+
+//     sum = firstJudge + secondJudge + thirdJudge;
+//     if(reg5.test(_password)){
+//       print("NO");
+//     }else{
+//         if(_password.length >= 8){
+//           if(!reg4.test(_password)){
+//               if(sum >= 2){
+//                     print("YES");
+//                 }else{
+//                   print("NO");
+//                 }
+//             }else{
+//               print("NO");
+//             }
+//         }else{
+//           print("NO");
+//         }
+//     }
+//     length--;
+// }
+
+// //测试用函数，为了模拟笔试环境的输入输出，不属于正式内容
+// function read_line(){
+//   if(i <= 5){
+//     i++;
+//     return a[i-2];
+//   }
+// }
+// function print(s){
+//   console.log(s);
+// }
+

@@ -26,6 +26,10 @@
 		<button v-on:click='reverseMessage'>翻转文本</button>
 		<p>Original message: "{{ message3 }}"</p>
 		<p>Computed reversed message: "{{ reversedMessage2 }}"</p>
+		<div>
+		<!-- v-for 也可以取整值，这时，将重复多次模板 -->
+			<span v-for="n in 10">{{ n }}</span>
+		</div>
 	</div>
 
 	<script type="text/javascript">
@@ -43,12 +47,14 @@
 				],
 				a: 'good boy'
 			},
+			// 计算属性的缓存 只有当依赖更新时才会触发计算属性的更新
+			// 如果不想缓存，使用method代替
 			methods: {
 				reverseMessage: function(){
 					this.message2 = this.message2.split('').reverse().join('');
 				}
 			},
-			//计算属性 函数将用作app.reversedMessage的getter函数
+			//计算属性 函数将用作app.reversedMessage2的getter函数
 			computed: {
 				reversedMessage2: function(){
 					return this.message3.split('').reverse().join('');
