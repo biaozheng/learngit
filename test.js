@@ -1202,3 +1202,142 @@ console.log(result[0],result[1]);
 //   console.log(s);
 // }
 
+//回文数组
+// var length = parseInt("8"),
+//     arr = "51 23 52 97 97 76 23 51".split(" "),
+//     flag = [];
+
+// function judge(){
+//     var count = 0;
+//     var length2 = Math.floor(length/2);
+//     for(;count < length2;count++){
+//         if(count === (length2)-1){
+//             if(arr[count] === arr[length-count-1]){
+//                 return true;
+//             }else{
+//                 return false;
+//             }
+//         }
+//         if(arr[count] === arr[length-count-1]){
+//             continue;
+//         }else{
+//             flag.push(count); //记录不匹配的位置
+//             return false;
+//         }
+//     }
+// }
+
+
+// function fix(){
+//     var count = flag.pop();
+//     var length2 = Math.floor(length/2);
+//     var result = arr.reduce(function(pre,last){return (+pre)+(+last);});
+//     if(judge()){
+//         console.log(result);
+//     }else{
+//         for(;count < length2;count++){
+//             if(arr[count] === arr[length-count-1]){
+//               continue;
+//           }else{
+//               flag.push(count); //记录不匹配的位置
+//           }
+//         }
+//     }
+//     if(flag.length === 1){
+//         result += +arr[flag[0]];
+//         result += +arr[length-flag[0]-1];
+//         console.log(result);
+//     }
+// }
+
+// fix();
+// 
+
+// function fun(x) {
+//   var temp = [1],
+//         flag = true,
+//         i = 0,
+//         floor = 1;
+//     while(flag){
+//         var _length = temp.length;
+//         if(x === 1){
+//             break;
+//         }
+//         if(_length === 1){
+//             temp.push(1);
+//             floor++;
+//           continue;
+//         }else{
+//             var newArr = [];
+//             newArr.push(1);
+//             for(i = 0;i < _length-1;i++){
+//               newArr.push(temp[i]+temp[i+1]);
+//             }
+//             newArr.push(1);
+//             floor++;
+//             if(newArr.indexOf(x) !== -1){
+//               break;
+//             }else{
+//                 temp = newArr.slice(0);
+                
+//               continue;
+//             }
+//         }
+//     }
+//     return floor;
+// }
+
+// var res; 
+  
+// var _x = parseInt("3");
+
+// res = fun(_x);
+// console.log(res);
+// 
+// function fun(str) {
+//   var result;
+//     var temp = str.split(""),
+//         __length = str.length;
+//     for(var j = 0;j < __length;j++){
+//         for(var i = 0;i < __length+1;i++){
+//             temp.splice(i,0,temp[j]);
+//             if(judge(temp)){
+//                 return true;
+//               }else{
+//                 temp.splice(i,1);
+//                 continue;
+//               }
+//         }
+//         if(j === __length-1){
+//           return false;
+//         }
+//     }
+// }
+
+// function judge(str){
+//   var _length = str.length;
+//     for(var i = 0; i < Math.floor(_length/2);i++){
+//         if(i === Math.floor(_length/2)-1){
+//           if(str[i] === str[_length-i-1]){
+//             return true;
+//           }else{
+//               return false;
+//             }
+//         }
+//       if(str[i] === str[_length-i-1]){
+//           continue;
+//         }else{
+//           return false;
+//         }
+//     }
+// }
+
+
+// var res; 
+  
+// var _str = "bbaa";
+
+// res = fun(_str);
+// res = res ? 1 : 0;
+// console.log(res);
+
