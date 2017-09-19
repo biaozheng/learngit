@@ -1341,3 +1341,49 @@ console.log(result[0],result[1]);
 // res = res ? 1 : 0;
 // console.log(res);
 
+// String.prototype.getSuffixList = function(suffix){
+//     //TODO：编写代码逻辑 ，不使用正则
+//     var arr = this.split(" "),
+//         length = arr.length,
+//         countArr = [],
+//         lastLen = suffix.length,
+//         result = "",
+//         i = 0,
+//         j = 0;
+//     for( i = 0;i < length;i++){
+//         var wordLen = arr[i].length,
+//             countLen = countArr.length;
+//         if(arr[i].indexOf(suffix) === (wordLen-lastLen)){
+//             if(countLen === 0){
+//                 countArr.push({word:arr[i],num:1});
+//             }else{
+//                 for( j = 0;j < countLen;j++){
+                    
+//                     if(j === countLen-1 && countArr[j].word !== arr[i]){
+//                         countArr.push({word:arr[i],num:1});
+//                     }else{
+//                       if(countArr[j].word === arr[i]){
+//                       }else{
+//                           countArr[j].num += 1;
+//                       }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+    
+//     for( j = 0;j < countArr.length;j++){
+//         if(j === countArr.length-1){
+//             result += countArr[j].word + "=" + countArr[j].num;
+//         }else{
+//             result += countArr[j].word + "=" + countArr[j].num +",";
+//         }
+//     }
+    
+    
+//     //输出结果
+//     return result;//字符串
+// };
+
+// console.log("a beaful swftgul ful gul beaful the wful".getSuffixList("ful"));
+// 
