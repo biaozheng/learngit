@@ -711,7 +711,7 @@ function LinkedList(){
 	};
 }
 console.log(printListFromTailToHead());
-*/
+*/   //链表
 
 /*
 function printListFromTailToHead(head)
@@ -760,7 +760,6 @@ console.log(palindrome("0_0 (: /-\ :) 0-0"));
 /*
 function findLongestWord(str) {
   var temp = str.split(" ");
-  console.log(temp[0].length);
   var max = (temp[0]).length;
   for(var i = 0;i < temp.length-1;i++){
     if((temp[i+1]).length > max){
@@ -1386,4 +1385,276 @@ console.log(result[0],result[1]);
 // };
 
 // console.log("a beaful swftgul ful gul beaful the wful".getSuffixList("ful"));
+//
+// var count = 0,
+//     firstline = "2 4".split(" "),
+//     diedYear = parseInt("5"),
+//     thridline = parseInt("10");
+
+// function sheep(){
+//   this.life = 0;
+//     this.live = true;
+//     this.birth = function(){
+//       for(let k = 0;k < firstline.length;k++){
+//           if(this.life === parseInt(firstline[k])){
+//               return new sheep();
+//             }
+//         }
+//         return null;
+//     };
+// }
+
+// var sheepArr = [];
+// sheepArr.push(new sheep());
+
+// for(let j = 1; j <= thridline;j++){
+//   var length = sheepArr.length;
+//     for(let i = 0;i < length;i++){
+//         sheepArr[i].life += 1;
+
+//         if((sheepArr[i].birth()) !== null){
+//           sheepArr.push(sheepArr[i].birth());
+//         }
+//       if(sheepArr[i].life === diedYear){
+//           sheepArr[i].live = false;
+//         }
+//     }
+// }
+
+// for(let i = 0;i < length;i++){
+//   if(sheepArr[i].live === true){
+//       count++;
+//     }
+// }
+
+// console.log(count);
 // 
+// var time = parseInt("5"),
+//     stringArr = [],
+//     str = ["ykit-config-yo","mykit","fekit","ykit-config-fekit","ykit"];
+// while(time>0){
+//   stringArr.push(str[5-time]);
+//     time--;
+// }
+
+// var key = "ykit",
+//     reg = new RegExp("^"+key+"","i"),
+//     temp1 = [],
+//     temp2 = [],
+//     temp3 = [];
+
+// for(let i = 0;i < stringArr.length;i++){
+//   if(stringArr[i].indexOf(key) !== -1){
+//       if(stringArr[i] === key){
+//           temp1.push(stringArr[i]);
+//         }else if(reg.test(stringArr[i])){
+//           temp2.push(stringArr[i]);
+//         }else{
+//           temp3.push(stringArr[i]);
+//         }
+//     }
+// }
+
+// temp2.sort(function(pre,last){
+//   var len = pre.length>last.length?lats.length:pre.length;
+//   for(let i = 0;i < len;i++){
+//     if(pre[i] === last[i]){
+//       continue;
+//     }else if(pre[i] > last[i]){
+//       return true;
+//     }else{
+//       return false;
+//     }
+//   }
+// });
+
+// temp3.sort(function(pre,last){
+//   var len = pre.length>last.length?lats.length:pre.length;
+//   for(let i = 0;i < len;i++){
+//     if(pre[i] === last[i]){
+//       continue;
+//     }else if(pre[i] > last[i]){
+//       return true;
+//     }else{
+//       return false;
+//     }
+//   }
+// });
+// var result = temp1.concat(temp2);
+// result = result.concat(temp3);
+
+// for(let j = 0;j < result.length;j++){
+//   console.log(result[j]);
+// }
+
+// var result = "4 12".split(" "),
+//     arr = "5 5 5 5".split(" "),
+//     time = 0;
+
+// arr = arr.sort(function(pre, last){
+//   return pre > last;
+// });
+// result[1] = parseInt(result[1]);
+// for(var i = 0;i < parseInt(result[0]);i++){
+
+//   if(result[1] > parseInt(arr[i])){
+//       result[1] = result[1]-parseInt(arr[i]);
+//       time += parseInt(arr[i]);
+//     }else{
+//       if(result[1]>0){
+//         time += parseInt(arr[i]);
+//       }
+//       console.log(time);
+//       break;
+//     }
+  
+// }
+// 
+// var count = parseInt("5"),
+//     diffArr = "1 2 3 4 4".split(" "),
+//     ask = parseInt("5"),
+//     arr = ["1 2","1 3","2 4","2 5","4 4"];
+
+// function judge(s){
+//   var start = parseInt(s[0])-1,
+//         end = parseInt(s[1])-1,
+//         result_ = 0;
+//     if(end - start < 2){
+//       return 0;
+//     }else{
+//       for(var j = 0;j < end-start-1;j++){
+//           (function(j){if(parseInt(diffArr[start+j])<=parseInt(diffArr[start+1+j])){
+//               if(parseInt(diffArr[start+1+j])<=parseInt(diffArr[start+2+j])){
+//                   result_ += 1;
+//                 }
+//             }
+//         })(j);
+//       }
+//     }
+//     return result_;
+// }
+// for(var i = 0;i < ask;i++){
+//     (function(i){var temp = arr[i].split(" ");
+//     var result = judge(temp);
+//     console.log(result);
+//   })(i);
+// }
+// 
+// function Fibonacci(n)
+// {
+//     // write code here
+//     var arr = [1,1],
+//         temp = 0;
+//     if(n===0){
+//         return 0;
+//     }
+//     if(n===1){
+//         return 1;
+//     }else{
+//         for(let i = 2;i < n;i++){
+//           temp = arr[0]+arr[1];
+//           arr[0] = arr[1];
+//           arr[1] = temp;
+//       }
+//         return arr[1];
+//     }
+// }
+
+// console.log(Fibonacci(3));
+// 
+// var search = "47 4 4".split(" ");
+// var temp = [],
+//     result = [],
+//     j = 0,
+//     s = ["2 3 4 5","13 14 26 27","34 35 47 58","105 116 128 129"];
+// while(j < search[1]){
+//     temp.push(s[j].split(" "));
+//     j++;
+// }
+// console.log(temp);
+
+// for(let i = 0;i < temp.length;i++){
+//     if(parseInt(temp[i][0]) > parseInt(search[0])){
+//         result.push(i-1);
+//         if(temp[i-1].indexOf(search[0]) !== -1){
+//             result.push(temp[i-1].indexOf(search[0]));
+//             break;
+//         }else{
+//             break;
+//         }
+//     }
+// }
+
+// console.log(result.join(" "));
+// var temp = "12 12 23 12 64 89 64 32 45 23".split(" ");
+// var result = [];
+
+// for(let i = 0;i < temp.length;i++){
+//     if(i === 0){
+//         result.push([temp[0],1]);
+//     }else {
+//         for(let j = 0;j < result.length;j++){
+//             if(result[j][0] === temp[i]){
+//                 result[j][1] += 1;
+//                 break;
+//             }else if(j === result.length-1 && result[j][0] !== temp[i]){
+//                 result.push([temp[i],1]);
+//                 break;
+//             }
+//         }
+//     }
+// }
+
+// console.log(result.sort(function(pre,last){return pre[1] < last[1];}));
+//
+//找出两个数字的二进制位不用的个数
+// var num = "22 10".split(" ");
+// var firstNum = parseInt(num[0]),
+//     secondNum = parseInt(num[1]);
+// var count = 0;
+// while(firstNum > 0 || secondNum > 0){
+//     if((firstNum%2) !== (secondNum%2)){
+//         count++;
+//         firstNum = firstNum >> 1;
+//         secondNum = secondNum >> 1;
+//         console.log(firstNum,secondNum);
+//     }else{
+//         firstNum = firstNum >> 1;
+//         secondNum = secondNum >> 1;
+//         console.log(firstNum,secondNum);
+//     }
+// }
+// console.log(count);
+// 
+// 矩阵的顺时针输出
+// function turn(arr){
+//     var r = arr.length;
+//     var c = arr[0].length;
+//     var temp = [];
+//     for(let i = 0;i < c;i++){
+//         var temp_c = [];
+//         for(let j = 0;j < r;j++){
+//             temp_c.push(arr[j][i]);
+//         }
+//         temp.push(temp_c);
+//     }
+//     return temp.reverse();
+// }
+// function printMatrix(matrix)
+// {
+//     // write code here
+//     var result = [];
+//     while(matrix.length !== 0){
+//         var tempArr = matrix.shift();
+//         for(let i = 0;i < tempArr.length;i++){
+//             result.push(tempArr[i]);
+//         }
+//         if(matrix.length === 0){
+//           break;
+//         }
+//         matrix = turn(matrix);
+//     }
+//     return result;
+// }
+
+// console.log(printMatrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]));
