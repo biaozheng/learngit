@@ -1658,3 +1658,13 @@ console.log(result[0],result[1]);
 // }
 
 // console.log(printMatrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]));
+
+// var input = "Baidu translation is Baidu's online translation service, relying on Internet data resources and Natural Language Processing technology advantages, is committed to helping users to cross the language gap, convenient access to information and services";
+// var i = 0;
+// while(input.length-i > 25){
+//   var output = input.slice(i,25+i);
+//   console.log(output);
+//   i += 25;
+// }
+// console.log(input.slice(i));
+// 等宽输出
